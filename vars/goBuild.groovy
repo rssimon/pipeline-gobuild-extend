@@ -6,7 +6,7 @@ def call(body) {
     body.delegate = config
     body()
     node {
-     stage 'Stage 1'
+     stage 'go-build-stage'
      gobuild product: "${config.product}", branch: "${config.branch}", changeset: "${config.changeset}", buildType: "${config.buildType}"
     }
 }
