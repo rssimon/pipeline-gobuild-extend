@@ -7,6 +7,6 @@ def call(body) {
     body()
     node {
      stage 'Stage 1'
-     gobuild product: "${config.product}", branch: "${config.stage}", changeset: "${config.changeset}", buildType: "${config.buildType}"
+     gobuild product: "${config.product}", branch: "${config.branch}", changeset: "${config.changeset}", buildType: "${config.buildType}"
     }
 }
