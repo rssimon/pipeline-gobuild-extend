@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
 
-def call(String name='Rijo') {
-  echo "Hello, ${name}."
+def call() {
+  gobuild product: 'copytest64', branch: 'stage', changeset: 'latest', buildType: 'beta'
 }
