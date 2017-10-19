@@ -5,8 +5,9 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
+    product=config.product
     node {
      stage 'Stage 1'
-     gobuild product: '${config.product}', branch: 'stage', changeset: 'latest', buildType: 'beta'
+     gobuild product: "${product}", branch: 'stage', changeset: 'latest', buildType: 'beta'
     }
 }
