@@ -1,12 +1,8 @@
 #!/usr/bin/env groovy
 
-def call(body) {
-    def config = [:]
-    body.resolveStrategy = Closure.DELEGATE_FIRST
-    body.delegate = config
-    body()
+def call(String product='copytest64', String branch='stage', String changeset='latest', String buildType='beta') {
     node {
      stage 'Stage 1'
-     gobuild product: "${config.product}", branch: 'stage', changeset: 'latest', buildType: 'beta'
+     gobuild product: "${product}", branch: "${branch}", changeset: "${changset}", buildType: "${buildType}"
     }
 }
