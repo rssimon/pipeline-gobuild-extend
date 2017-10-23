@@ -10,3 +10,8 @@ def call(body) {
      gobuild product: "${config.product}", branch: "${config.branch}", changeset: "${config.changeset}", buildType: "${config.buildType}"
     }
 }
+
+def RunGoBuildWithSomething(arg)
+{
+  echo "Hello World GoBuild with Something."
+}
