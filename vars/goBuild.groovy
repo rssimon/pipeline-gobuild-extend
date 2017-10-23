@@ -8,7 +8,7 @@ def RunGoBuild(Map gobuild_params = [:])
   }
 }
 
-def RunGoBuildWithLatestChange(product, branch, buildType="beta")
+def RunGoBuildWithLatestChange(Map gobuild_params = [:])
 {
 node {
  stage 'go-build-stage'
