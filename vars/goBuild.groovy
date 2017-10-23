@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def RunGoBuild(product, branch, changeset, buildType)
+def RunGoBuild(product, branch, changeset, buildType="beta")
 {
   node {
    stage 'go-build-stage'
@@ -8,7 +8,7 @@ def RunGoBuild(product, branch, changeset, buildType)
   }
 }
 
-def RunGoBuildWithLatestChange(product, branch, buildType)
+def RunGoBuildWithLatestChange(product, branch, buildType="beta")
 {
 node {
  stage 'go-build-stage'
