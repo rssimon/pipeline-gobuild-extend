@@ -11,7 +11,7 @@ def call(body) {
     }
 }
 
-def RunGoBuildWithSomething(arg)
+def RunGoBuildWithSomething(arg1, arg2)
 {
-  echo "Hello World GoBuild with Something."
+  echo "Hello World GoBuild with Something. ${arg1}.${arg2}"
 }
