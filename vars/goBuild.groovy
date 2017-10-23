@@ -1,10 +1,10 @@
 #!/usr/bin/env groovy
 
-def RunGoBuild(product, branch, changeset, buildType="beta")
+def RunGoBuild(Map gobuild_params = [:])
 {
   node {
    stage 'go-build-stage'
-   gobuild product: "${product}", branch: "${branch}", changeset: "${changeset}", buildType: "${buildType}"
+   gobuild product: "${gobuild_params.product ?: 'copytest64'}", branch: "${gobuild_params.branch ?: 'stage'}", changeset: "${gobuild_params.changeset ?: 'latest'}", buildType: "${gobuild_params.buildType ?: 'beta'}"
   }
 }
 
@@ -12,6 +12,6 @@ def RunGoBuildWithLatestChange(product, branch, buildType="beta")
 {
 node {
  stage 'go-build-stage'
- gobuild product: "${product}", branch: "${branch}", changeset: "latest", buildType: "${buildType}"
+ gobuild product: "${gobuild_params.product ?: 'copytest64'}", branch: "${gobuild_params.branch ?: 'stage'}", changeset: "latest", buildType: "${gobuild_params.buildType ?: 'beta'}"
 }
 }
